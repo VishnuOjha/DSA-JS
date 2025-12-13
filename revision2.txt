@@ -1,0 +1,336 @@
+1-> sum of two integer
+
+Write a Program that defines a function to calculate the sum of two integers and prints the result. Call this function by passing two integer values.
+
+const a = 10. const b = 20
+
+function sum(a,b){
+    retrun a+b
+}
+
+sum(10, 20) // output= 30
+
+2-> sqaure of the number
+Write a function that takes an integer and returns its square. Call this function and prints the result. Square(x) is a function that computes the square of a number.
+It returns the result instead of printing it.
+
+function square(a){
+    return a * a
+}
+
+const a = 5
+square(5) // output: 25
+
+3-> Write a program that accepts a number (age) and checks whether the person is eligible to vote. 
+A person is eligible if their age is 18 or more.
+
+function votingEligibility(age){
+    if(age>=18){
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+const age = 24
+votingEligibility(age) // output : true
+
+4-> Write a function that accepts a number and checks whether it is Even or Odd. 
+If the number is divisble by 2, it’s an Even number. Otherwise, it’s an Odd number. Test the function with inputs 18 and 5.
+
+function oddEven(number){
+    if(number % 2 === 0){
+        return "Even
+    } else{
+        return "Odd"
+    }
+}
+
+oddEven(5) // output: Odd
+
+
+Arrays:  
+
+5-> Write a program to print all even numbers from an array.
+
+Example:
+Input: [10, 3, 5, 2, 7, 6, 9]
+
+Output: 10 2 6
+
+let input = [10, 3, 5, 2, 7, 6, 9]
+
+for(let i = 0; i< input.length; i++){
+    if(input[i] % 2 === 0 ){
+        return input[i]
+    }
+}
+
+6-> Write a function that returns the number of negative numbers in an array.
+
+Input: arr = [2, -6, 4, 8, 1, -9]
+
+let arr = [2, -6, 4, 8, 1, -9]
+
+function countNegative(arr){
+    let negativecount = 0
+
+    for(let i = 0; i< arr.length; i++){
+        if(arr[i] < 0){
+            negativecount++
+        }
+    }
+    return negativecount
+}
+
+countNegative(arr)
+
+7-> Write a function that returns the smallest number in an array.
+
+Approach:
+Initialize a variable smallest to Infinity.
+Loop through the array.
+If the current element is less than smallest, update smallest.
+Return smallest after the loop ends.
+
+const arr = [2, -6, 4, 8, 1, -9]
+
+function findSmallest(arr){
+    let smallest = Infinity
+
+    for(let i=0; i< arr.length; i++){
+        if(arr[i] < smallest){
+            smallest = arr[i]
+        }
+    }
+
+    return smallest
+}
+
+8-> Find Largest Number in an Array
+
+Initialize a variable largest to -Infinity.
+Loop through the array.
+If the current element is greater than largest, update largest.
+Return largest after the loop ends.
+
+function findLargest(arr){
+    let largest = -Infinity
+
+    for(let i = 0; i< arr.length; i++){
+        if(arr[i] > largest){
+            largest = arr[i]
+        }
+    }
+
+    return largest
+}
+
+9-> Write a function secondLargest(arr) that returns the second largest distinct number in an array.
+
+Requirements:
+The array must contain at least two elements.
+If all elements are equal, return: No second largest found.
+If the array has fewer than two elements, return: Array should have at least two numbers.
+Examples:
+Input: arr = [0, 3, 5, 2, 7, 9] → Output: 7
+
+Input: arr = [4, 4, 4, 4] → Output: No second largest found
+
+Input: arr = [5] → Output: Array should have at least two numbers
+
+Input: arr = [10, 20] → Output: 10
+
+Constraints:
+Time Complexity: O(n) — Single pass through the array.
+
+Space Complexity: O(1) — Constant space.
+
+
+function secondLargest(arr){
+
+    if(arr.length < 2) return "Arrays should have at least two elements"
+
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+
+    for(let i = 0; i< arr.length; i++){
+        if(arr[i] > largest){
+            secondLargest = largest;
+            largest = arr[i]
+        } else if(arr[i] > secondLargest && secondLargest !== largest){
+            secondLargest = arr[i]
+        } else{
+            return "No second largest found"
+        }
+    }
+
+    return  secondLargest
+
+}
+
+console.log(secondLargest(arr))
+
+
+10-> start pattern
+
+Pattern 1: Print a square pattern of stars (*) of size n x n.
+
+Output
+* * * *
+* * * *
+* * * *
+* * * *
+
+let n= 4;
+
+for(let i = 0; i < n; i++){
+    let row= ""
+    for(let j=0; j < n ; j++){
+        row = row + "*"
+    }
+    console.log(row)
+}
+
+Pattern 2: Right-Angled Star Triangle
+Print a right-angled triangle of stars with n rows.
+
+Output
+*
+* *
+* * *
+* * * *
+
+let n = 4
+
+for(let i = 0; i<= n; i++){
+    let row = ""
+    for(let j = 0; j < i; j++){
+        row = row+ "*"
+    }
+    console.log(row)
+}
+
+Pattern 3: Print a Right-Angled Number Triangle
+Write a program that prints a right-angled triangle of numbers of heightn.
+
+Output
+1
+1 2
+1 2 3
+1 2 3 4
+
+let n =4
+
+for(let i = 0; i< n; i++){
+    let row= ""
+    for(let j = 0; j <= i; j++){
+        row = row + (j+1)
+    }
+    console.log(row)
+}
+
+Pattern 4: Print a Right-Angled Triangle of Repeated Numbers
+Write a program that prints a right-angled triangle where each row contains the same number repeated.
+
+Output
+1
+2 2
+3 3 3
+4 4 4 4
+
+for(let i=0; i< n; i++){
+    let row = ""
+    for(let j = 0; j<= i; j++){
+        row = row + (i+1)
+    }
+}
+
+Pattern 5: Print a Reverse Right-Angled Triangle of Increasing Numbers
+Write a program that prints a reverse right-angled triangle where each row starts from 1 and the number of elements decreases with each row.
+
+Output
+1 2 3 4
+1 2 3
+1 2
+1
+
+for(let i=0; i< n; i++){
+    let row = ""
+    for(let j = 0; j<n-i; j++){
+        row = row + (j+1)
+    }
+}
+
+11-> Write a function countDigits(n)that takes an integer n and returns how many digits it contains.
+
+const num =123
+
+function countDigit(n){
+    if(n === 0 ) return 1
+    
+    let count= 0
+    n = Math.abs(n)
+
+    while(n> 0){
+        n = Math.floor(n/10)
+        count++
+    }
+
+return count
+
+}
+
+12-> Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+
+Requirements:
+Handles both positive and negative integers.
+Return falsefor negative numbers (not Palindromes)
+
+const n =121
+
+function isPalindrome(n){
+
+if(n< 0) return false
+
+let nCopy = n
+let rev = 0
+
+while(n>0){
+    let rem = n%10
+    rev = rev * 10 + rem
+    n = Math.floor(n/10)
+}
+
+return rev == nCopy ? true : false
+
+}
+
+console.log(isPalindrome(n))
+
+13->Problem Statement:
+Write a function reverse(x) that takes a 32-bit signed integer and returns its digits reversed. If the reversed value overflows the 32-bit signed integer range, return 0.
+
+Requirements:
+Reverse the digits of a 32-bit signed integer.
+Return 0if the result overflows.
+
+const n =123
+
+function reverseDigit(n){
+    let nCopy = n
+    let rev= 0
+    n = Math.abs(n)
+
+    while(n>0){
+        let rem = n%10
+        rev = n * 10 + rem
+        n = Math.floor(n/10)
+    }
+
+    if(rev > 2**31 -1) return 0
+
+    retrun nCopy< 0 ? -rev : rev
+}
+
